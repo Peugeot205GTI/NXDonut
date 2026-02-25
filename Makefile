@@ -43,6 +43,9 @@ SOURCES		:=	MODPlay src
 DATA		:=	data
 INCLUDES	:=	include
 ROMFS	:=	romfs
+APP_TITLE   ?=	NX Donut
+APP_AUTHOR  ?=	ToyotaAE86Trueno
+APP_VERSION ?=	1.0
 
 #---------------------------------------------------------------------------------
 # options for code generation

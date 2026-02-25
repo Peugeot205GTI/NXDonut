@@ -1,5 +1,10 @@
-#include "audio.h"
+/*
+**  NXDonut, spinning ascii 3d donut for the Nintendo Switch using libNX and MODPlay.
+**  Audio rendering.
+**  Copyright Lololol.
+*/
 
+#include "audio.h"
 #include "../MODPlay/modplay.h"
 
 #if __has_include(<SDL2/SDL.h>)

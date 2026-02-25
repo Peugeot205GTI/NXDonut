@@ -1,6 +1,6 @@
 /*
-**  NXDonut
-**  Donut.c by Andy Sloane, but actually readable. (It's also the main loop due to libnx consoleUptade())
+**  NXDonut, spinning ascii 3d donut for the Nintendo Switch using libNX and MODPlay.
+**  Donut.c by Andy Sloane, but actually readable.
 **  Copyright Lololol.
 */
 
@@ -37,6 +37,9 @@ void donut(PadState* pad)
     u64 kDown;
 
     while (appletMainLoop()){
+        for (k = 0; k < 480; k++) {
+            putchar(k % 80 ? ' ' : '\n');
+        }
         padUpdate(pad);
         kDown = padGetButtonsDown(pad);
         if (kDown & HidNpadButton_Plus)
@@ -92,7 +95,14 @@ void donut(PadState* pad)
         f = (3 - d * d - c * c) / 2;
         d *= f;
         c *= f;
-        printf("\x1b[23A");
+        printf("\n\n\n\n\n\n");
+        printf("\n \e[44;97m.----------------------------------------------------------------------------.\x1b[0m");
+        printf("\n \e[44;97m|  NX Donut v1.0                                         (Press + to quit.)  |\x1b[0m");
+        printf("\n \e[44;97m|  Based on the original donut.c by Andy Sloane <andy@a1k0n.net>             |\x1b[0m");
+		printf("\n \e[44;97m|  Ported by ToyotaAE86Trueno <toyota_ae86trueno> (Discord)                  |\x1b[0m");
+		printf("\n \e[44;97m|  Music by Jogeir Liljedahl                                                 |\x1b[0m");
+		printf("\n \e[44;97m'----------------------------------------------------------------------------'\x1b[0m");
+        printf("\x1b[40A");
         consoleUpdate(NULL);
     }
 }
