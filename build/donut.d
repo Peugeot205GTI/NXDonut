@@ -171,7 +171,8 @@ donut.o: /home/firefly/NXDonut/src/donut.c \
  /opt/devkitpro/libnx/include/switch/crypto/cmac.h \
  /opt/devkitpro/libnx/include/switch/crypto/sha1.h \
  /opt/devkitpro/libnx/include/switch/crypto/hmac.h \
- /opt/devkitpro/libnx/include/switch/crypto/crc.h
+ /opt/devkitpro/libnx/include/switch/crypto/crc.h \
+ /home/firefly/NXDonut/src/main.h
 /opt/devkitpro/libnx/include/switch.h:
 /opt/devkitpro/libnx/include/switch/types.h:
 /opt/devkitpro/libnx/include/switch/result.h:
@@ -345,3 +346,4 @@ donut.o: /home/firefly/NXDonut/src/donut.c \
 /opt/devkitpro/libnx/include/switch/crypto/sha1.h:
 /opt/devkitpro/libnx/include/switch/crypto/hmac.h:
 /opt/devkitpro/libnx/include/switch/crypto/crc.h:
+/home/firefly/NXDonut/src/main.h:

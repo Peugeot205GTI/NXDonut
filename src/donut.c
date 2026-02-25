@@ -1,19 +1,20 @@
 /*
 **  NXDonut
-**  Donut.c by Andy Sloane, but actually readable.
+**  Donut.c by Andy Sloane, but actually readable. (It's also the main loop due to libnx consoleUptade())
 **  Copyright Lololol.
 */
 
 #include <stdio.h>
 #include <string.h>
 #include <switch.h>
+#include <unistd.h>
+#include "main.h"
+#include <math.h>
 
 void donut(PadState* pad)
 {
     float z[1760];
     char b[1760];
-    float A = 0;
-    float B = 0;
     float c = 1;
     float d = 0;
     float e = 1;
@@ -33,10 +34,11 @@ void donut(PadState* pad)
     int y;
     int o;
     int N;
+    u64 kDown;
 
     while (appletMainLoop()){
         padUpdate(pad);
-        u64 kDown = padGetButtonsDown(pad);
+        kDown = padGetButtonsDown(pad);
         if (kDown & HidNpadButton_Plus)
             break;
         memset(b, ' ', 1760);
@@ -90,7 +92,7 @@ void donut(PadState* pad)
         f = (3 - d * d - c * c) / 2;
         d *= f;
         c *= f;
-        printf("\n donut.c! \x1b[23A");
+        printf("\x1b[23A");
         consoleUpdate(NULL);
     }
 }

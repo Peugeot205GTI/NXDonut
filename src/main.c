@@ -15,6 +15,7 @@
 int main(int argc, char** argv)
 {
     consoleInit(NULL);
+    nwindowSetSwapInterval(nwindowGetDefault(), 2);
     padConfigureInput(1, HidNpadStyleSet_NpadStandard);
     PadState pad;
     padInitializeDefault(&pad);
