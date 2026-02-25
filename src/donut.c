@@ -1,7 +1,14 @@
+/*
+**  NXDonut
+**  Donut.c by Andy Sloane, but actually readable.
+**  Copyright Lololol.
+*/
+
 #include <stdio.h>
 #include <string.h>
+#include <switch.h>
 
-void donut(void)
+void donut(PadState* pad)
 {
     float z[1760];
     char b[1760];
@@ -27,7 +34,11 @@ void donut(void)
     int o;
     int N;
 
-    for (;;) {
+    while (appletMainLoop()){
+        padUpdate(pad);
+        u64 kDown = padGetButtonsDown(pad);
+        if (kDown & HidNpadButton_Plus)
+            break;
         memset(b, ' ', 1760);
         memset(z, 0, sizeof(z));
         g = 0;
@@ -80,5 +91,6 @@ void donut(void)
         d *= f;
         c *= f;
         printf("\n donut.c! \x1b[23A");
+        consoleUpdate(NULL);
     }
 }
